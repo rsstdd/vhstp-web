@@ -1,0 +1,72 @@
+// File Name: _button.scss
+// Description: Button styles
+// Used by: app.scss 
+// Dependencies:
+// ------------------------------------------------------------
+
+  // Variables
+$black: #333;
+$white: #FFF;
+$app-store-color: #614E93;
+$wht-btn-color: #71619A;
+
+// =======================
+//         btns
+// =======================
+.btn {
+  box-sizing: border-box;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 100;
+  line-height: 19px;
+  margin: 1rem;
+  padding: 1rem;
+  text-align: center;
+  text-transform: uppercase;
+  width: 200px;
+
+  // ----------------------------
+    // BUTTON - Variations
+  // ----------------------------
+  &__purple-btn {
+    background-color: transparent;
+    border: 1px solid $white;
+    color: $white;
+  }
+  
+  &__white-btn {
+    background-color: $white;
+    border: 1px solid $white;
+    color: $wht-btn-color;
+  }
+  
+  &__app-store {
+    border: 1px solid $white;
+    background-color: $app-store-color;
+    color: $white;
+  }
+}
+
+// ----------------------
+  // BUTTON - Responsive
+// ----------------------
+@include min-lg {
+  padding: 1rem 1.15rem;
+};
+
+@include min-md {
+  font-size: 16px;
+};
+
+@include min-lg {
+  font-size: 18px;
+};
+
+// ----------------------
+  // Keyframes (Ripple)
+// ----------------------
+@keyframes rippleAnimation {
+  100% {opacity: 0; transform: scale(2.5);}
+}

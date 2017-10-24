@@ -1,0 +1,98 @@
+// File Name: _typography.scss
+// Description: typos
+// Used by: app.scss
+// Dependencies: 
+// ------------------------------------------------------------
+
+
+// -------------------------------------------------------------
+  // Font
+// -------------------------------------------------------------
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display|Raleway');
+
+// -------------------------------------------------------------
+  // Variables
+// -------------------------------------------------------------
+$font-header: 'Raleway', sans-serif;
+$font-body: 'Playfair Display', serif;
+
+$black: #161338;
+$white: #FFF;
+
+// -------------------------------------------------------------
+  // Font Size
+// -------------------------------------------------------------
+html {
+  color: $black;
+  font-family: $font-body;
+  line-height: 23px;
+  font-size: 16px;
+
+  @include min-md {
+    font-size: 18px;
+  }
+
+  @include min-lg {
+    font-size: 20px;
+  }
+
+  @include min-xl {
+    font-size: 26px;
+  }
+}
+
+h1, h2,
+h3, h4,
+h5 {
+  font-family: $font-header;
+  margin: 2rem 0;
+  line-height: 65px;
+  font-weight: bold;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: 3.48em;
+  @include sm {
+    font-size: 2.3353em;
+    line-height: 1.3;
+  }
+  @include lg {
+    font-size: 2.3353em;
+    line-height: 1.3;
+  }
+}
+
+h2 {
+  font-size: 2.3353em;
+  @include sm {
+    font-size: 1.769em;
+  }
+  @include lg {
+    font-size: 1.769em;
+  };
+}
+
+h3 {
+  font-size: 1.769em;
+  @include sm {
+    font-size: 1.33em;
+  }
+  @include lg {
+    font-size: 1.33em;
+  }
+}
+
+h4 {
+  font-size: 1.769em;
+  @include sm {
+    font-size: 1.769em;
+  }
+  @include lg {
+    font-size: 1.769em;
+  }
+}
+
+
+
+
