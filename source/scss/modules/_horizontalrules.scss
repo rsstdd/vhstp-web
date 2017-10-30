@@ -1,0 +1,26 @@
+// File Name: _horizontalrules.scss
+// Description: <hr> styles
+// Used by: app.scss
+// Dependencies:
+// ------------------------------------------------------------
+
+// =============================
+//   HRs - Home
+// =============================
+.hum-hr {
+  height: 0.05%;
+  width: 80%;
+  border: 1px solid $black;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.home-dashed-hr {
+  @extend .hum-hr;
+  width: 100%;
+  border: 1.45px dashed $black;
+}
+.home-bottom-hr {
+  @extend .hum-hr;
+  margin-bottom: 5%;
+}

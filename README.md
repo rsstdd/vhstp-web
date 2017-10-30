@@ -1,6 +1,6 @@
 # SHT-WEB ★★
 
-SAAS Web Application. 
+SAAS Web Application.
 
 ## Table of contents
 * [Setup](#user-content-setup)
@@ -151,4 +151,3 @@ import CircleSvg from '../../../assets/svg/circle.svg';
 
 ```
 -----
-

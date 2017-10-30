@@ -1,66 +1,111 @@
+// File Name: component/Global/Navbar.jsx
+// Description: Navbar
+// Used by:
+// Dependencies:
+// ------------------------------------------------------------
+
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
 import { routeCodes } from 'config/routes';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
-class Navbar extends React.Component {
+  // Images
+
+  // Actions
+
+  // Components
+// import LoginModal from './../LoginModal';
+
+@connect(state => ({
+}))
+export default class Navbar extends React.Component {
   constructor(props){
     super(props);
-    this.state= {
-      isHidden: false,
-      isScrolled: false,
+
+    this.state = {
+      isSmaller: false,
     };
 
-    this.hideBar = this.hideBar.bind(this)
+    this.smallBar = this.smallBar.bind(this)
+    this.signOut = this.signOut.bind(this)
   }
 
-  hideBar(){
-    let { isScrolled, isHidden } = this.state;
-    console.log('ISCROLLED || IS.HIDDEN', isScrolled, isHidden);
-    console.log(window.scrollY);
-    
-    if (Math.round(window.scrollY) > 100) {
-      this.setState({ isScrolled: true });
-    } else if (Math.round(window.scrollY) > 500) {
-      this.setState({ isHidden: false });
-    }
+  smallBar(){
+    let { isSmaller } = this.state;
 
-    // this.prev = window.scrollY;
-    //   $('.navbar').addClass('scrolled');
-    // } else {
-    //   $('.navbar').removeClass('scrolled');
-    // }
+    window.scrollY > (this.prev < 150) ?
+      !isSmaller && this.setState({ isSmaller: true })
+    :
+      isSmaller && this.setState({ isSmaller: false })
 
-    // window.scrollY > this.prev ?
-    //   !isHidden && this.setState({ isHidden: true })
-    //   :
-    //   isHidden && this.setState({ isHidden: false })
-
+    this.prev = window.scrollY;
   }
 
-  componentDidMount(){
-    window.addEventListener('scroll', this.hideBar);
+  signOut() {
+    const { dispatch, history } = this.props;
+    dispatch(signoutUser());
   }
 
-  componentWillUnmount(){
-    window.removeEventListener('scroll', this.hideBar);
+  componentDidMount() {
+    window.addEventListener('scroll', this.smallBar);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.smallBar);
   }
 
   render() {
-    console.log('isScrolled', this.state.isScrolled);
-    console.log('isHidden', this.state.isHidden);
-
-    let isScrolled = this.state.isScrolled ? '--isScrolled' : '';
-    let isHidden = this.state.isHidden ? '--isHidden' : ''
+    let  navContent, navLocation, isAuthenticated, states ;
+    // let { navContent, navLocation, isAuthenticated, states } = this.props;
+    let isSmallerClass = this.state.isSmaller ? '--isSmaller' : '';
 
     return (
-      <nav className={`Nav Nav${ isHidden || isScrolled }`}>
+      <nav className={`Nav Nav${isSmallerClass}`}>
         <div className="Nav__nav-logo">
-          <Link to="/"></Link>
+          <Link to="/">
+            {/* <img
+              src={HummingtreeLogo}
+              alt='Hummingtree'
+            /> */}
+          </Link>
+        </div>
+        <div className="Nav__nav-list">
+          <Link to="/">Home</Link>
+          { isAuthenticated ? (
+              <span>
+                <Link to={`${navLocation}`}>
+                  {navContent}
+                </Link>
+                <Link to={`/example`}>
+                  Example
+                </Link>
+                <Link
+                  to="/"
+                  onClick={this.signOut}
+                >
+                  Sign Out
+                </Link>
+              </span>
+            ) : (
+              <span>
+                <LoginModal
+                  isButton={false}
+                  states={states}
+                />
+              </span>
+            )
+          }
         </div>
       </nav>
     );
   }
-}
 
-export default Navbar;
+  static propTypes = {
+    navContent: PropTypes.string,
+    navLocation: PropTypes.string,
+    isAuthenticated: PropTypes.bool,
+    dispatch: PropTypes.func,
+  }
+}

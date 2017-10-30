@@ -1,0 +1,83 @@
+// File Name: _footer.scss
+// Description: Footer styles
+// Used by: app.scss
+// Dependencies:
+// TODO: separate structure into layout/layout.scss module
+// ------------------------------------------------------------
+
+// =============================
+//           Footer
+// =============================
+.footer {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: flex-start;
+  justify-content: space-around;
+  width: 100%;
+  height: auto;
+  padding: 5% 3%;
+  background-color: $dark-green;
+
+
+  // --------------------------------
+    // FOOTER - Logo
+  // ---------------------------------
+  &__logo {
+    width: 35%;
+    align-self: center;
+
+    p {
+      color: #f8a13a;
+      bottom: 0;
+      font-size: 12px;
+      font-weight: 100;
+    }
+  }
+
+  // --------------------------------
+    // FOOTER - Links
+  // ---------------------------------
+  &__links {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    width: 60%;
+    height: 100%;
+    flex-direction: row;
+    align-items: flex-start;
+    text-align: left;
+
+    &--title {
+      text-transform: uppercase;
+      border-bottom: 1px solid $white;
+      display: block;
+      color: $white;
+      font-size: 12px;
+      font-weight: 100;
+      padding-bottom: 4px;
+      margin-bottom: 8px;
+      margin-right: 25%;
+    }
+
+    a {
+      line-height: 33px;
+      font-weight: lighter;
+      display: block;
+      font-size: 12.5px;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    &__links1 {
+      flex-basis: content;
+      width: 50%;
+    }
+
+    &__links2 {
+      flex-basis: content;
+      width: 50%;
+    }
+  }
+}

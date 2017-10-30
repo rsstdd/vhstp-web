@@ -1,0 +1,54 @@
+// File Name: _messages.scss
+// Description: Forms - Errors
+// Used by: app.scss
+// Dependencies: _color.scss
+// ------------------------------------------------------------
+
+.Msg {
+  display: flex;
+  width: 65%;
+  margin: 0 auto;
+  flex-direction: row;
+  justify-content: center;
+  padding: .25rem;
+  padding-top: 1rem;
+  border-radius: 3px;
+  animation: cssAnimation 2s forwards;
+
+  &__error {
+    align-items: center;
+    color: $err-msg-clr;
+    background-color: $err-msg-bkgrnd;
+  }
+
+  &__success {
+    color: $scss-msg-clr;
+    background-color: $scss-msg-bkgrnd;
+  }
+
+  @keyframes cssAnimation {
+    0%   {opacity: 1;}
+    90%  {opacity: 1;}
+    100% {opacity: 0;}
+  }
+
+  @-webkit-keyframes cssAnimation {
+    0%   {opacity: 1;}
+    90%  {opacity: 1;}
+    100% {opacity: 0;}
+  }
+}
+
+
+// =============================
+//         Responsive
+// =============================
+
+@include sm {
+  .Msg {
+    width: 299px;
+    padding: .1rem;
+    padding-top: .75rem;
+    margin: -10px -72px;
+  }
+}

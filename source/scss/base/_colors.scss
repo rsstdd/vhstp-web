@@ -1,5 +1,28 @@
+// File Name: _colors.scss
+// Description: Colors Used By Entire App
+// Used by: typography.scss;
+// Dependencies:
+// ------------------------------------------------------------
+
+// -----------------
+  // Black and White
+// -----------------
+$black: #161338;
+$white: #FFF;
+
+// -------------------------------------
+  //  Style guide - Hgroup
+// --------------------------------------
 $light-green: #98c673;
 $mid-green: #7aa965;
 $dark-green: #6d8a4e;
 $orange: #f8a13a;
 $logo-color: #A3C524;
+
+// ----------------------------
+  // Messages
+// ----------------------------
+$err-msg-clr: #D8000C;
+$err-msg-bkgrnd: #FFBABA;
+$scss-msg-clr: #270;
+$scss-msg-bkgrnd: #DFF2BF;

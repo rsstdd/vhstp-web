@@ -1,0 +1,45 @@
+// File Name: _line-through.scss
+// Description: Defines horizontal lines through an element
+// Used by: Wrapper/index.jsx
+// Dependencies:
+// ------------------------------------------------------------
+
+// ------------------------
+  // Variables
+// ------------------------
+$linesHeight: 7px;
+
+// =======================
+//     Line Through
+// =======================
+
+.line-through {
+  overflow: hidden;
+}
+
+.line-through span {
+  position: relative;
+  // font-family: $font-family-cursive;
+}
+
+.line-through span:before,
+.line-through span:after {
+  line-height: $linesHeight;
+  content: '';
+  position: absolute;
+  border-bottom: 1px solid $light-green;
+  width: 600px;
+  height: $linesHeight;
+  top: 50%;
+  margin-top: floor(-$linesHeight / 2);
+}
+
+.line-through span:before {
+  right: 100%;
+  margin-right: 15px;
+}
+
+.line-through span:after {
+  left: 100%;
+  margin-left: 15px;
+}

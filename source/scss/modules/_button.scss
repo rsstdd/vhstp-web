@@ -1,14 +1,8 @@
 // File Name: _button.scss
 // Description: Button styles
-// Used by: app.scss 
+// Used by: app.scss
 // Dependencies:
 // ------------------------------------------------------------
-
-  // Variables
-$black: #333;
-$white: #FFF;
-$app-store-color: #614E93;
-$wht-btn-color: #71619A;
 
 // =======================
 //         btns
@@ -16,7 +10,8 @@ $wht-btn-color: #71619A;
 .btn {
   box-sizing: border-box;
   border: none;
-  color: white;
+  border-radius: 3px;
+  color: $white;
   cursor: pointer;
   font-size: 16px;
   font-weight: 100;
@@ -25,29 +20,49 @@ $wht-btn-color: #71619A;
   padding: 1rem;
   text-align: center;
   text-transform: uppercase;
-  width: 200px;
+  text-rendering: optimizeLegibility;
+  min-width: 230px;
+  max-width: 100%;
 
   // ----------------------------
     // BUTTON - Variations
   // ----------------------------
-  &__purple-btn {
+  &__clear-btn {
     background-color: transparent;
     border: 1px solid $white;
-    color: $white;
   }
-  
-  &__white-btn {
+
+  &__white-border-btn {
     background-color: $white;
-    border: 1px solid $white;
-    color: $wht-btn-color;
+    border: 1px solid $dark-green;
+    color: $black;
   }
-  
-  &__app-store {
+
+  &__lime-btn {
+    background-color: $logo-color;
     border: 1px solid $white;
-    background-color: $app-store-color;
-    color: $white;
   }
 }
+
+// ----------------------
+  // BUTTON - Responsive
+// ----------------------
+
+@include md {
+  .btn {
+    font-size: 14px;
+    padding: .70rem;
+    margin: .75rem;
+  }
+};
+
+@include sm {
+  .btn {
+    font-size: 12px;
+    padding: .70rem;
+    margin: .75rem;
+  }
+};
 
 // ----------------------
   // BUTTON - Responsive
