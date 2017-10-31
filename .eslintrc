@@ -1,5 +1,5 @@
 extends:
-  eslint-config-airbnb
+  airbnb
 
 parser:
   babel-eslint
