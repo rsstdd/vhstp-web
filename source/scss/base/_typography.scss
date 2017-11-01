@@ -23,8 +23,11 @@ $font-body: 'Playfair Display', serif;
 html {
   color: $black;
   font-family: $font-body;
-  line-height: 23px;
-  font-size: 16px;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  font-weight: 400;
+  line-height: 1.3;
+  font-size: 18px;
 
   @include min-md {
     font-size: 18px;
@@ -46,10 +49,8 @@ h1, h2,
 h3, h4,
 h5 {
   font-family: $font-hgroup;
-  margin: 2rem 0;
-  line-height: 65px;
-  font-weight: bold;
-  line-height: 1.2;
+  margin: 1rem 0;
+  line-height: 1.5;
 }
 
 h1 {
@@ -65,25 +66,28 @@ h1 {
 }
 
 h2 {
-  font-size: 2.3353em;
+  font-size: 1.79em;
+  font-weight: 100;
+  color: $light-green;
+
   @include sm {
-    font-size: 1.769em;
+    font-size: 1.2447em;
   }
   @include lg {
-    font-size: 1.769em;
+    font-size: 1.2447em;
   };
 }
 
 h3 {
-  font-size: 1.769em;
-  font-weight: lighter;
+  font-size: 1.52035em;
+  font-weight: 300;
   line-height: 1.5em;
 
   @include sm {
-    font-size: 1.33em;
+    font-size: 1.97205em;
   }
   @include lg {
-    font-size: 1.33em;
+    font-size: 1.97205em;
   }
 }
 
@@ -115,7 +119,7 @@ h5 {
 // ==========================
 .emphasis {
   &__orange {
-    color: $logo-color!important;
+    color: $logo-color !important;
   }
 
   &__lime {

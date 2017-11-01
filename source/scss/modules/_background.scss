@@ -1,0 +1,38 @@
+// File Name: _background.scss
+// Description: Home Styles
+// Used by: app.scss For views/Home/index.jsx Styles
+// Dependencies:
+// ------------------------------------------------------------
+
+
+#background-pattern {
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  transform: skewY(-9deg);
+  transform-origin: 0;
+  background: linear-gradient(150deg, $dark-green 15%, $light-green 70%, $mid-green 94%);
+
+  span &  {
+      &:nth-child(1) {
+        width: 33.33333%;
+        left: -16.66666%;
+        background: $dark-green;
+      }
+      &:nth-child(2) {
+        width: 33.33333%;
+        top: 0;
+        left: 16.66666%;
+        right: auto;
+        background: $light-green;
+
+      &:nth-child(3) {
+        width: 33.33333%;
+        left: 49.99999%;
+        bottom: auto;
+        background: $mid-green;
+      }
+    }
+  }
+}

@@ -35,7 +35,7 @@ export default class Navbar extends React.Component {
   smallBar(){
     let { isSmaller } = this.state;
 
-    window.scrollY > (this.prev < 150) ?
+    window.scrollY > (this.prev < 350) ?
       !isSmaller && this.setState({ isSmaller: true })
     :
       isSmaller && this.setState({ isSmaller: false })
@@ -90,10 +90,7 @@ export default class Navbar extends React.Component {
               </span>
             ) : (
               <span>
-                <LoginModal
-                  isButton={false}
-                  states={states}
-                />
+                <a className="btn btn__small btn__clear-btn">Log In</a>
               </span>
             )
           }

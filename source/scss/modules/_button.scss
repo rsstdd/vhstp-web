@@ -24,12 +24,26 @@
   min-width: 230px;
   max-width: 100%;
 
+  &__small {
+    padding: .25rem 2rem;
+    min-width: 125px !important;
+    max-width: 200px !important;
+  }
+
   // ----------------------------
     // BUTTON - Variations
   // ----------------------------
   &__clear-btn {
     background-color: transparent;
-    border: 1px solid $white;
+    color: $orange;
+    border: 1px solid $light-green;
+
+    a {
+      &:hover {
+        background-color: $dark-green !important;
+        color: $white !important;
+      }
+    }
   }
 
   &__white-border-btn {
@@ -39,7 +53,8 @@
   }
 
   &__lime-btn {
-    background-color: $logo-color;
+    color: $white;
+    background-color: $dark-green;
     border: 1px solid $white;
   }
 }
