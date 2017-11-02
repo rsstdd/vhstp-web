@@ -16,6 +16,7 @@
     "server:dev": "npm run clean && concurrently --prefix \"[{name}]\" --names \"webpack-server,watch-server\" --kill-others \"npm run server:watch\" \"npm run server:restart\"",
     "universal:dev": "concurrently --prefix \"[{name}]\" --names \"webpack-server,webpack-client,watch-server\" --kill-others \"npm run server:watch\" \"npm run client:watch\" \"npm run server:restart\"",
     "universal:build": "npm run client:build && npm run server:build",
+    "production:build": "npm run client:build && npm run server:build; gcloud app deploy",
     "clean": "rm -rf ./build",
     "lint-hook": "eslint ./source/js ./webpack ./*.js -f table --ext .js --ext .jsx",
     "lint": "npm run lint-hook --silent || true",
