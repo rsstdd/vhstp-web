@@ -5,7 +5,8 @@
   "license": "MIT",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server",
+    "start": "node ./build/server.js",
+    "start:dev": "webpack-dev-server",
     "client:dev": "webpack-dashboard -t 'trails-web' -- webpack-dev-server",
     "client:watch": "webpack",
     "client:build": "npm run clean && cross-env NODE_ENV=\"production\" webpack",
