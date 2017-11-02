@@ -2,7 +2,6 @@
 // Description: Footer styles
 // Used by: app.scss
 // Dependencies:
-// TODO: separate structure into layout/layout.scss module
 // ------------------------------------------------------------
 
 // =============================
@@ -38,11 +37,10 @@
   // ---------------------------------
   &__links {
     display: flex;
-    flex-wrap: wrap;
-    align-content: center;
+    flex-flow: row wrap;
     width: 60%;
     height: 100%;
-    flex-direction: row;
+    align-content: center;
     align-items: flex-start;
     text-align: left;
 
@@ -64,19 +62,63 @@
       display: block;
       font-size: 12.5px;
 
+      margin-right: 25px;
+      padding-bottom: 5px;
+      text-transform: uppercase;
+      position: relative;
+      &:before,
+      &:after {
+        content: '';
+        bottom: 0;
+        left: 0;
+        width: 20%;
+        position: absolute;
+        transition: transform .25s ease;
+      }
       &:hover {
         cursor: pointer;
+        color: darken($white, 20%);
       }
     }
 
     &__links1 {
-      flex-basis: content;
+      padding-left: 5%;
       width: 50%;
     }
 
     &__links2 {
-      flex-basis: content;
       width: 50%;
+    }
+  }
+}
+
+
+@include sm {
+  .footer {
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: center;
+    padding: 5%;
+
+    &__links {
+      flex-direction: column-reverse;
+      padding-left: 5%;
+      width: 90%;
+
+      &__links1 {
+        width: 100%;
+        padding: 0;
+        margin-top: 5%;
+        margin-bottom: 2%;
+      }
+      &__links2 {
+        width: 100%;
+        padding: 0;
+        margin-top: 5%;
+        margin-bottom: 2%;
+
+      }
+
     }
   }
 }

@@ -1,0 +1,22 @@
+// File Name: _hover-effect.scss
+// Description: Header/Navbar styles
+// Used by: app.scss
+// Dependencies:
+// ------------------------------------------------------------
+
+.hover-effect {
+  // Needs this on the a element in the styles
+  // before, after content, transition and abs position
+
+  &:before {
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 1px;
+    background: $orange;
+    transform: scaleX(0);
+  }
+  &:hover:before {
+    transform: scaleX(1);
+  }
+}

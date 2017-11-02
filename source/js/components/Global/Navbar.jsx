@@ -7,7 +7,6 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
 import { routeCodes } from 'config/routes';
-import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
@@ -26,6 +25,7 @@ export default class Navbar extends React.Component {
 
     this.state = {
       isSmaller: false,
+      isMobile: false,
     };
 
     this.smallBar = this.smallBar.bind(this)
@@ -64,33 +64,49 @@ export default class Navbar extends React.Component {
     return (
       <nav className={`Nav Nav${isSmallerClass}`}>
         <div className="Nav__nav-logo">
-          <Link to="/">
+          <NavLink to="/">
             {/* <img
               src={HummingtreeLogo}
               alt='Hummingtree'
             /> */}
-          </Link>
+          </NavLink>
         </div>
         <div className="Nav__nav-list">
-          <Link to="/">Home</Link>
-          { isAuthenticated ? (
+          <NavLink
+            to="/"
+            className="hover-effect"
+            // activeClassName= "Nav__nav-list__selected"
+            >
+              Home
+            </NavLink>
+            {isAuthenticated ? (
               <span>
-                <Link to={`${navLocation}`}>
+                <NavLink
+                  to={`${navLocation}`}
+                  className="hover-effect"
+                  // activeClassName="Nav__nav-list__selected"
+                >
                   {navContent}
-                </Link>
-                <Link to={`/example`}>
+                </NavLink>
+                <NavLink
+                  to={`/example`}
+                  className="hover-effect"
+                  // activeClassName="Nav__nav-list__selected"
+                >
                   Example
-                </Link>
-                <Link
+                </NavLink>
+                <NavLink
                   to="/"
                   onClick={this.signOut}
+                  className="hover-effect"
+                  // activeClassName="Nav__nav-list__selected"
                 >
                   Sign Out
-                </Link>
+                </NavLink>
               </span>
             ) : (
               <span>
-                <a className="btn btn__small btn__clear-btn">Log In</a>
+                <a className="draw-border btn btn__small">Log In</a>
               </span>
             )
           }

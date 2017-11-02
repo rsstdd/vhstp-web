@@ -2,9 +2,7 @@
 // Description: Header/Navbar styles
 // Used by: app.scss
 // Dependencies:
-// TODO: separate structure into layout/layout.scss module
 // ------------------------------------------------------------
-
 
 // =======================
 //         Nav
@@ -43,31 +41,34 @@
     justify-content: flex-end;
     align-self: center;
     padding-right: 5%;
+    font-size: .75rem;
 
     li {
-      vertical-align: middle;
       padding-top: 12px;
-      font-weight: 100;
-      letter-spacing: .5px;
-      text-align: right;
       text-transform: uppercase;
     }
 
-    a {
+    & a {
       margin-right: 25px;
+      padding-bottom: 5px;
       text-transform: uppercase;
-
-    &:after {
+      position: relative;
+      &:before,
+      &:after {
         content: '';
         position: absolute;
-        left: 0;
-        bottom: 0;
-        width: 0;
-        height: 2px;
-        background: $orange;
-        -webkit-transition: width 120ms ease-in;
-        transition: width 120ms ease-in;
+        transition: transform .25s ease;
       }
+    }
+
+    span {
+      letter-spacing: .5px;
+      padding-top: 12px;
+      padding-bottom: 5px;
+    }
+
+    &__selected {
+      border-bottom: solid 2px $orange;
     }
   }
 
@@ -80,25 +81,7 @@
   &--isHidden {
     display: none !important;
   }
-
-  &--scrolled {
-    transition: 0.5s ease;
-    height: 50px;
-    background-color: rgba(0, 0, 0, 0.2);
-    transition: 0.5s ease;
-    &.logo {
-      float: left;
-      display: inline-block;
-      margin-top: 5px;
-      margin-left: 5%;
-      width: 30px;
-      height: 30px;
-      background-color: firebrick;
-      transition: 0.5s ease;
-    }
-  }
 }
-
 
 @include sm {
   .Nav {

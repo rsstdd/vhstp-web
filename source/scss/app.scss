@@ -1,7 +1,7 @@
 // ----------------------------------------------------------------------
   // Base
 // ----------------------------------------------------------------------
-@import "base/_colors";
+@import "base/_colors"; // used universally
 @import "base/_app";
 @import "base/_breakpoints";
 @import "base/_normalize";
@@ -15,15 +15,18 @@
 // ----------------------------------------------------------------------
   // Modules
 // ----------------------------------------------------------------------
+@import "modules/_hover-effect"; // used by nav/foot
+@import "modules/_button-border-mixin"; // used by nav
+@import "modules/_button";
 @import "modules/_navbar";
 @import "modules/_footer";
-@import "modules/_button";
 @import "modules/_horizontalrules";
 @import "modules/_line-through";
 @import "modules/_loading";
 @import "modules/_messages";
 @import "modules/_to-top";
 @import "modules/_background";
+@import "modules/_forms";
 
 // ----------------------------------------------------------------------
   // Views

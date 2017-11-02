@@ -28,6 +28,12 @@ $breakpoint-xl: 2000px !default;
 }
 
 
+@mixin min-sm() {
+  @media (min-width: $breakpoint-sm) {
+    @content;
+  }
+}
+
 @mixin min-md() {
   @media (min-width: $breakpoint-md) {
     @content;

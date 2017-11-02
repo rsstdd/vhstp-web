@@ -1,4 +1,8 @@
-$black: #333;
+// File Name: _app.scss
+// Description: Base styles
+// Used by: app.scss
+// Dependencies:
+// ------------------------------------------------------------
 
 *, *:before, *:after {
   box-sizing: inherit;
@@ -24,6 +28,7 @@ html, body {
 // -------------------------------------------------------------
 ol, ul {
   list-style: none;
+  padding-left: 0;
 
   li {
     color: $white;
@@ -32,6 +37,7 @@ ol, ul {
     line-height: 1.5;
     display: list-item;
     text-align: -webkit-match-parent;
+    // vertical-align: middle;
 
     a {
       color: inherit;

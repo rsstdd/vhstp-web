@@ -35,8 +35,8 @@ class Home extends Component {
       <section>
         <section className="Home container-fluid">
           <div className="Home__header col-sm center-sm">
-            <h1>VMS System. We make you $$.</h1>
-            <h2>We are the best at what we do. Do you want to be great?</h2>
+            <h1>Volunteer Hours Management System.</h1>
+            <h2>We are the best at VHMS.</h2>
           </div>
           <div className="row Home__about">
             <div className="col-sm center-sm">
