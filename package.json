@@ -86,7 +86,7 @@
     "transit-immutable-js": "^0.7.0",
     "transit-js": "^0.8.846"
   },
-  "description": "Starter boilerplate for React and Redux, using Webpack 3",
+  "description": "SaaS Prototype for a Volunteer Hours Management Application",
   "repository": {
     "type": "git",
     "url": ""
