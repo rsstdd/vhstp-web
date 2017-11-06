@@ -1,4 +1,4 @@
-// File Name: reducers/index
+// File Name: reducers/authReducer
 // Description: Application Reducers
 // Used by:
 // Dependencies:
@@ -8,10 +8,12 @@ import initialState from './initialState'
 import { Map } from 'immutable';
 import {
     // USER
-  GET_TOKEN_START,
+  AUTH_USER,
+  UNAUTH_USER,
+  AUTH_USER_START,
+  AUTH_USER_SUCCESS,
+  AUTH_USER_ERROR,
   DELETE_TOKEN,
-  GET_TOKEN_SUCCESS,
-  GET_TOKEN_ERROR,
 
   REGISTER_USER_START,
   REGISTER_USER_SUCCESS,
@@ -24,7 +26,7 @@ const actionsMap = {
     // ASYNC USER
   // --------------
     // Sign In User
-  [GET_TOKEN_START]: (state) => {
+  [AUTH_USER_START]: (state) => {
     return state.merge(Map({
       isAuthenticated: false,
       tokenLoading: true,
@@ -32,7 +34,7 @@ const actionsMap = {
       tokenSuccess: false,
     }));
   },
-  [GET_TOKEN_SUCCESS]: (state) => {
+  [AUTH_USER_SUCCESS]: (state) => {
     return state.merge(Map({
       tokenLoading: false,
       tokenError: false,
@@ -40,7 +42,7 @@ const actionsMap = {
       isAuthenticated: true,
     }));
   },
-  [GET_TOKEN_ERROR]: (state, action) => {
+  [AUTH_USER_ERROR]: (state, action) => {
     return state.merge(Map({
       tokenLoading: false,
       tokenSuccess: false,

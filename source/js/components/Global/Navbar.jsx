@@ -77,8 +77,15 @@ export default class Navbar extends React.Component {
             className="hover-effect"
             // activeClassName= "Nav__nav-list__selected"
             >
-              Home
-            </NavLink>
+            Home
+          </NavLink>
+          <NavLink
+            to="dashboard"
+            className="hover-effect"
+            // activeClassName= "Nav__nav-list__selected"
+            >
+            Dashboard
+          </NavLink>
             {isAuthenticated ? (
               <span>
                 <NavLink

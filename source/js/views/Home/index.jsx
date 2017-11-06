@@ -18,8 +18,10 @@ import { withRouter } from 'react-router';
 
   // Images
 
-@connect(state => ({
-}))
+// @connect(state => ({
+//   tokenSuccess: state.auth.get('tokenSuccess'),
+//   isAuthenticated: state.auth.get('isAuthenticated'),
+// }))
 class Home extends Component {
   constructor(props) {
     super(props);
@@ -29,7 +31,12 @@ class Home extends Component {
   }
 
   render() {
-    const {} = this.props;
+    const {
+      tokenSuccess,
+      isAuthenticated
+    } = this.props;
+
+    console.log(tokenSuccess, isAuthenticated);
 
     return (
       <section>

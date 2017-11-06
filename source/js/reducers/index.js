@@ -7,10 +7,9 @@
 import { combineReducers } from 'redux';
 import { routerReducer } from 'react-router-redux';
 import { reducer as form } from 'redux-form/immutable';
-
-import authReducer from './authReducer';
+import auth from './authReducer';
 
 export default combineReducers({
-  authReducer,
+  auth,
   routing: routerReducer
 });

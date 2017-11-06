@@ -6,10 +6,12 @@
 
 // User Actions
     // Auth
-export const GET_TOKEN_START= 'GET_TOKEN_START';
+export const AUTH_USER = 'AUTH_USER';
+export const UNAUTH_USER = 'UNAUTH_USER';
+export const AUTH_USER_START = 'AUTH_USER_START';
+export const AUTH_USER_SUCCESS = 'AUTH_USER_SUCCESS';
+export const AUTH_USER_ERROR = 'AUTH_USER_ERROR';
 export const DELETE_TOKEN = 'DELETE_TOKEN';
-export const GET_TOKEN_SUCCESS = 'GET_TOKEN_SUCCESS';
-export const GET_TOKEN_ERROR = 'GET_TOKEN_ERROR';
 
     // -> Register User
 export const REGISTER_USER_START = 'REGISTER_USER_START';
