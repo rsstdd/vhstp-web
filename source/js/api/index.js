@@ -8,7 +8,7 @@ import axios from 'axios';
 
 const ROOT_URL = process.env.NODE_ENV === 'production'
   ? 'https://vhms-web.appspot.com/'
-  : 'http://localhost:8080/api';
+  : 'http://localhost:9000/api';
 
 function xhrRequest(method, route, data, isWithCredentials) {
   return axios({
